@@ -2,6 +2,7 @@ import pygame
 import sys
 
 from settings import *
+from level import Level
 # from debug import debug
 
 
@@ -17,6 +18,8 @@ class Game:
         pygame.display.set_caption('Zelda?')
         ICON = pygame.image.load('img/icon.jpg')
         pygame.display.set_icon(ICON)
+
+        self.level = Level()
         
     def run(self):
         # event loop
@@ -26,8 +29,9 @@ class Game:
                     pygame.quit()
                     sys.exit()
 
-            # update the screen
+            # update the game
             self.screen.fill('black')
+            self.level.run()
             pygame.display.update()
             self.clock.tick(FPS)  # FPS determines how many times the game updates itself
 
