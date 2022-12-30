@@ -16,7 +16,7 @@ class Game:
 
         # set window title and icon
         pygame.display.set_caption('Zelda?')
-        ICON = pygame.image.load('img/icon.jpg')
+        ICON = pygame.image.load('../graphics/icon.jpg')
         pygame.display.set_icon(ICON)
 
         self.level = Level()
